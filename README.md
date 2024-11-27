@@ -1,75 +1,76 @@
-# ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712.
-Overview
-This repository contains assembly language programs demonstrating various programming techniques including control flow, array manipulation, subroutine implementation, and port-based simulation.
-Programs
-1. Control Flow Program (control-flow.asm)
+ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712
+This repository contains solutions to assembly language programming tasks for ICS3203. The programs are written using NASM for x86-64 architecture and are designed to demonstrate concepts like control flow, array manipulation, modular programming, and hardware simulation.
 
-Purpose: Classifies user input number as POSITIVE, NEGATIVE, or ZERO
-Key Features:
+Tasks Overview
+1. Control Flow and Conditional Logic
+File: classify_number.asm
+This program prompts the user to enter a number and classifies it as:
 
-Demonstrates conditional and unconditional jump instructions
-Uses system calls for input/output
-Implements branching logic
+POSITIVE
+NEGATIVE
+ZERO
+Branching logic using conditional (jl, jg) and unconditional (jmp) jumps is implemented.
 
+2. Array Manipulation with Looping and Reversal
+File: reverse_array.asm
+This program reverses an array of integers in place using pointers and loops. It avoids using additional memory to store the reversed array.
 
+3. Modular Program for Factorial Calculation
+File: factorial.asm
+This program calculates the factorial of a number using a modular approach:
 
-2. Array Reversal Program (array-reversal.asm)
+A separate subroutine performs the factorial calculation.
+The stack is used to preserve register values during recursion.
+4. Data Monitoring and Control Using Port-Based Simulation
+File: port_control_simulation.asm
+Simulates a control system that:
 
-Purpose: Reverses an array of integers in-place
-Key Features:
-
-Manual input parsing
-In-memory array manipulation
-No additional memory allocation for reversal
-
-
-
-3. Factorial Calculation Program (factorial.asm)
-
-Purpose: Compute factorial of user-input number
-Key Features:
-
-Modular subroutine design
-Stack-based register management
-Recursive-like factorial calculation
-
-
-
-4. Sensor Control Simulation (sensor-control.asm)
-
-Purpose: Simulate water level monitoring system
-Key Features:
-
-Simulated sensor input processing
-Conditional actions based on water level
-Memory location manipulation
-
-
-
-Compilation Instructions
+Reads a "sensor value" from a memory location.
+Turns a "motor" on/off based on sensor input.
+Triggers an "alarm" if the sensor value exceeds a threshold.
+Compilation and Execution Instructions
 Prerequisites
-
-NASM Assembler
-Linux/Unix environment
-
-Compilation Steps
-
+Install NASM:
+On Linux: sudo apt install nasm
+On macOS: brew install nasm
+On Windows: Download from NASM's official website.
+Install GCC or ld for linking object files:
+On Linux/macOS: Usually pre-installed.
+On Windows: Use MinGW or WSL.
+Steps to Compile and Run
 Assemble the program:
-bashCopynasm -f elf32 program_name.asm
-
+bash
+Copy code
+nasm -f elf64 <filename>.asm -o <filename>.o
 Link the object file:
-bashCopyld -m elf_i386 -o program_name program_name.o
+bash
+Copy code
+gcc <filename>.o -o <filename>
+Execute the program:
+bash
+Copy code
+./<filename>
+Using VS Code
+Install the "x86 and x86_64 Assembly" extension for syntax highlighting.
+Create a tasks.json file for automation (optional).
+Refer to the repository for the configuration template.
+Challenges and Insights
+Control Flow and Conditional Logic:
 
-Run the executable:
-bashCopy./program_name
+Managing signed comparisons (jl, jg) required attention.
+ASCII to integer conversion was tricky.
+Array Manipulation:
 
+Handling pointers (rsi, rdi) and ensuring no out-of-bounds access were challenging.
+Avoiding additional memory usage for the reversed array added complexity.
+Modular Program for Factorial:
 
-Challenges Encountered
+Recursive implementation using the stack required careful register preservation.
+Debugging stack overflow issues during recursion was an insightful learning experience.
+Data Monitoring and Control:
 
-Manual input parsing
-Memory management
-Register preservation
-Implementing algorithms without high-level language constructs
+Simulating hardware ports in memory introduced challenges in bit manipulation.
+Designing a decision-making structure based on sensor input was rewarding.
 
 Additional Notes
 
