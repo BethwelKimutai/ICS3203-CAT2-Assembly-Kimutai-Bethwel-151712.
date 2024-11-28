@@ -32,6 +32,13 @@ This repository contains the solutions to the practical tasks assigned in **ICS3
     <compiler> <filename>.asm -o <filename>.exe
 Replace `<compiler>` with your tool (e.g., `nasm`, `masm`) and `<filename>` with the specific task file name.
 
+For example to run Control flow and logic:
+  ```bash
+nasm -f elf32 classify_number.asm -o classify_number.o
+ld -m i386pe classify_number.o -o classify_number.exe
+./classify_number.exe
+```
+
 ### Running the Code
 1. After successful compilation, run the program using:
    ```bash
@@ -60,7 +67,27 @@ Replace `<compiler>` with your tool (e.g., `nasm`, `masm`) and `<filename>` with
 
 ---
 
+## Challenges
+1. Memory management was a recurring challenge, especially in tasks like array reversal where no extra memory was allocated for the reversed array.
+2. Control flow logic in Task 1 was critical to ensure correct handling of positive, negative, and zero values.
+3. Stack management in Task 3 required careful handling of function calls and register preservation.
+4. System-level programming involving direct manipulation of memory and I/O using sys_write and sys_read provided hands-on experience with low-level assembly operations.
+   
+## Conclusion
+This project helped reinforce concepts of assembly programming, including the use of registers, conditional and unconditional jumps, loops, memory management, and subroutines. Each task presented unique challenges that required an understanding of how to manipulate low-level system resources directly.
+
+## Repository Structure
 
 
-
-
+   ```bash
+         ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712/
+      ├── ControlFlowAndLogic/
+      │   ├── classify_number.asm
+      ├── ArrayManipulation/
+      │   ├── reverse_array.asm
+      ├── FactorialSubroutine/
+      │   ├── factorial.asm
+      ├── DataMonitoring/
+      │   ├── port_control_simulation.asm
+      └── README.md
+  ```
