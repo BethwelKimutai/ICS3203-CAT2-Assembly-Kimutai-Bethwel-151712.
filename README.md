@@ -83,11 +83,15 @@ This project helped reinforce concepts of assembly programming, including the us
          ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712/
       ├── ControlFlowAndLogic/
       │   ├── classify_number.asm
+      │   ├── classify_number.o
       ├── ArrayManipulation/
       │   ├── reverse_array.asm
+      │   ├── reverse_array.o
       ├── FactorialSubroutine/
       │   ├── factorial.asm
+      │   ├── factorial.o
       ├── DataMonitoring/
       │   ├── port_control_simulation.asm
+      │   ├── port_control_simulation.o
       └── README.md
   ```
