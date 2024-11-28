@@ -60,7 +60,6 @@ Replace `<compiler>` with your tool (e.g., `nasm`, `masm`) and `<filename>` with
 
 ---
 
-## Repository Structure
 
 
 
