@@ -1,79 +1,67 @@
-ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712
-This repository contains solutions to assembly language programming tasks for ICS3203. The programs are written using NASM for x86-64 architecture and are designed to demonstrate concepts like control flow, array manipulation, modular programming, and hardware simulation.
+# ICS3203-CAT2-Assembly-Kimutai-Bethwel-151712
 
-Tasks Overview
-1. Control Flow and Conditional Logic
-File: classify_number.asm
-This program prompts the user to enter a number and classifies it as:
+## Overview
 
-POSITIVE
-NEGATIVE
-ZERO
-Branching logic using conditional (jl, jg) and unconditional (jmp) jumps is implemented.
+This repository contains the solutions to the practical tasks assigned in **ICS3203 CAT 2**. Each program is written in assembly language and demonstrates core programming concepts such as control flow, looping, modular programming, and hardware simulation. Below is an overview of each task:
 
-2. Array Manipulation with Looping and Reversal
-File: reverse_array.asm
-This program reverses an array of integers in place using pointers and loops. It avoids using additional memory to store the reversed array.
+### Task 1: Control Flow and Conditional Logic
+- **Purpose:** Classify a user-input number as "POSITIVE," "NEGATIVE," or "ZERO" using conditional and unconditional jumps.
+- **Highlights:** This program demonstrates effective branching logic and explains the rationale behind the choice of jump instructions.
 
-3. Modular Program for Factorial Calculation
-File: factorial.asm
-This program calculates the factorial of a number using a modular approach:
+### Task 2: Array Manipulation with Looping and Reversal
+- **Purpose:** Reverse an array of integers in place without using additional memory.
+- **Highlights:** The solution utilizes loops to reverse the array efficiently, and each step is well-commented to explain the logic and challenges of direct memory manipulation.
 
-A separate subroutine performs the factorial calculation.
-The stack is used to preserve register values during recursion.
-4. Data Monitoring and Control Using Port-Based Simulation
-File: port_control_simulation.asm
-Simulates a control system that:
+### Task 3: Modular Program with Subroutines for Factorial Calculation
+- **Purpose:** Compute the factorial of a number using a modular approach with subroutines and the stack for register preservation.
+- **Highlights:** Demonstrates the use of modular programming and stack operations to manage register values during subroutine execution.
 
-Reads a "sensor value" from a memory location.
-Turns a "motor" on/off based on sensor input.
-Triggers an "alarm" if the sensor value exceeds a threshold.
-Compilation and Execution Instructions
-Prerequisites
-Install NASM:
-On Linux: sudo apt install nasm
-On macOS: brew install nasm
-On Windows: Download from NASM's official website.
-Install GCC or ld for linking object files:
-On Linux/macOS: Usually pre-installed.
-On Windows: Use MinGW or WSL.
-Steps to Compile and Run
-Assemble the program:
-bash
-Copy code
-nasm -f elf64 <filename>.asm -o <filename>.o
-Link the object file:
-bash
-Copy code
-gcc <filename>.o -o <filename>
-Execute the program:
-bash
-Copy code
-./<filename>
-Using VS Code
-Install the "x86 and x86_64 Assembly" extension for syntax highlighting.
-Create a tasks.json file for automation (optional).
-Refer to the repository for the configuration template.
-Challenges and Insights
-Control Flow and Conditional Logic:
+### Task 4: Data Monitoring and Control Using Port-Based Simulation
+- **Purpose:** Simulate a control program that monitors a "sensor value" and performs specific actions (e.g., turning on a motor, triggering an alarm) based on the input.
+- **Highlights:** Explains how memory locations or ports are manipulated to simulate hardware actions effectively.
 
-Managing signed comparisons (jl, jg) required attention.
-ASCII to integer conversion was tricky.
-Array Manipulation:
+---
 
-Handling pointers (rsi, rdi) and ensuring no out-of-bounds access were challenging.
-Avoiding additional memory usage for the reversed array added complexity.
-Modular Program for Factorial:
+## Instructions
 
-Recursive implementation using the stack required careful register preservation.
-Debugging stack overflow issues during recursion was an insightful learning experience.
-Data Monitoring and Control:
+### Compiling the Code
+1. Ensure you have an assembly language compiler or simulator (e.g., MASM, NASM, or any platform-specific tool).
+2. Open the terminal or command prompt in the directory containing the `.asm` files.
+3. Compile each program using the command:
+   ```bash
+    <compiler> <filename>.asm -o <filename>.exe
+Replace `<compiler>` with your tool (e.g., `nasm`, `masm`) and `<filename>` with the specific task file name.
 
-Simulating hardware ports in memory introduced challenges in bit manipulation.
-Designing a decision-making structure based on sensor input was rewarding.
+### Running the Code
+1. After successful compilation, run the program using:
+   ```bash
+    ./<filename>.exe
+2. Follow the prompts provided by the program for inputs.
 
-Additional Notes
+---
 
-These programs are written for 32-bit x86 architecture
-Tested on Linux environment
-Requires basic understanding of assembly language concepts
+## Challenges and Insights
+
+### Task 1: Control Flow and Conditional Logic
+- **Challenge:** Determining the most efficient combination of conditional and unconditional jumps.
+- **Insight:** Unconditional jumps were used to exit once a case was handled, improving program clarity and flow.
+
+### Task 2: Array Manipulation with Looping and Reversal
+- **Challenge:** Managing memory directly while avoiding auxiliary storage.
+- **Insight:** Implementing an in-place reversal using pointers was challenging but achieved with careful index manipulation.
+
+### Task 3: Modular Program with Subroutines for Factorial Calculation
+- **Challenge:** Managing stack operations to preserve registers during subroutine calls.
+- **Insight:** Using the stack allowed for a clean and modular implementation, improving the reusability of the factorial subroutine.
+
+### Task 4: Data Monitoring and Control Using Port-Based Simulation
+- **Challenge:** Simulating hardware interactions effectively.
+- **Insight:** Assigning specific memory locations for the "sensor" and "motor" simplified the logic for hardware status manipulation.
+
+---
+
+## Repository Structure
+
+
+
+
